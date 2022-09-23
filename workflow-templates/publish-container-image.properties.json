@@ -1,0 +1,11 @@
+{
+  "name": "Publish Docker Image to GitHub Packages Workflow",
+  "description": "Publish Docker Image to GitHub Packages starter workflow.",
+  "iconName": "example-icon",
+  "categories": [
+    "Dockerfile"
+  ],
+  "filePatterns": [
+    "^Dockerfile*"
+  ]
+}
