@@ -39,3 +39,18 @@ updates:
       time: "09:00"
       timezone: Australia/Melbourne
     open-pull-requests-limit: 1
+
+  - package-ecosystem: npm
+    directory: "/"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
+    schedule:
+      interval: weekly
+      time: "09:00"
+      timezone: Australia/Melbourne
+    open-pull-requests-limit: 1
+    # Always increase the version requirement
+    # to match the new version.
+    versioning-strategy: increase
