@@ -1,0 +1,44 @@
+name: Build and Test
+
+on:
+  push:
+    paths-ignore:
+      - '**.json'
+      - '**.md'
+
+jobs:
+  ci:
+    uses: kyhau/.github/.github/workflows/python-ci.yml@main
+    with:
+      python_versions: '["3.11", "3.12", "3.13"]'
+      run_yamllint: true
+      yamllint_target: yamllint
+      install_target: install-test-deps
+      test_target: test-coverage
+      codecov: true
+      codecov_files: coverage.xml
+    secrets:
+      CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  codeql:
+    uses: kyhau/.github/.github/workflows/codeql.yml@main
+    with:
+      language: python
+      schedule_enabled: false
+
+  secrets-scan:
+    uses: kyhau/.github/.github/workflows/secrets-scan.yml@main
+
+  stale:
+    if: github.event_name == 'schedule'
+    uses: kyhau/.github/.github/workflows/stale-issues.yml@main
+    with:
+      days_before_stale: 30
+      days_before_close: 5
+
+  dependabot-auto:
+    if: github.actor == 'dependabot[bot]'
+    uses: kyhau/.github/.github/workflows/dependabot-auto-approve-merge.yml@main
+    with:
+      auto_merge_enabled: true
+      merge_method: squash

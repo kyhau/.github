@@ -1,0 +1,14 @@
+{
+  "name": "Dependabot Configuration",
+  "description": "Dependabot configuration for Python projects with Poetry and GitHub Actions",
+  "iconName": "example-icon",
+  "categories": [
+    "Python",
+    "Automation"
+  ],
+  "filePatterns": [
+    "^pyproject.toml$",
+    "^poetry.lock$",
+    "^requirements*.txt$"
+  ]
+}

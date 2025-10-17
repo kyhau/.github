@@ -1,0 +1,16 @@
+name: Dependabot Auto-Approve and Merge
+
+on:
+  pull_request:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  dependabot:
+    uses: kyhau/.github/.github/workflows/dependabot-auto-approve-merge.yml@main
+    with:
+      auto_merge_enabled: true
+      merge_method: squash  # Options: squash, merge, rebase
+

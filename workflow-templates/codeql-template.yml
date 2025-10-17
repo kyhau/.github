@@ -1,0 +1,19 @@
+name: CodeQL Security Analysis
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  schedule:
+    - cron: '0 19 * * 5'  # Weekly on Fridays at 7pm UTC
+
+jobs:
+  codeql:
+    uses: kyhau/.github/.github/workflows/codeql.yml@main
+    with:
+      language: python  # Change to: javascript, go, java, etc.
+      branches: '["main"]'
+      schedule_enabled: true
+      schedule_cron: '0 19 * * 5'
+

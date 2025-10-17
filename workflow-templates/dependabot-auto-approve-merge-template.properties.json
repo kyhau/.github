@@ -1,0 +1,16 @@
+{
+  "name": "Dependabot Auto-Approve and Merge",
+  "description": "Automatically approve and merge Dependabot pull requests",
+  "iconName": "example-icon",
+  "categories": [
+    "Automation",
+    "Dependencies"
+  ],
+  "filePatterns": [
+    "^.github/dependabot.yml$",
+    "^package.json$",
+    "^requirements*.txt$",
+    "^pyproject.toml$"
+  ]
+}
+

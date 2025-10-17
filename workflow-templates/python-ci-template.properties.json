@@ -1,0 +1,15 @@
+{
+  "name": "Python Make CI Workflow",
+  "description": "Complete CI workflow for Python projects using Makefile, including tests, linting, CodeQL, and secrets scanning",
+  "iconName": "example-icon",
+  "categories": [
+    "Python",
+    "CI"
+  ],
+  "filePatterns": [
+    "^Makefile$",
+    "^pyproject.toml$",
+    "^requirements*.txt$",
+    "^setup.py$"
+  ]
+}

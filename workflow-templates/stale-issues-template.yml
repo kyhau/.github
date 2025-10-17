@@ -1,0 +1,15 @@
+name: Close Stale Issues
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Daily at midnight UTC
+
+jobs:
+  stale:
+    uses: kyhau/.github/.github/workflows/stale-issues.yml@main
+    with:
+      days_before_stale: 30
+      days_before_close: 5
+      stale_message: 'This issue is stale because it has been open 30 days with no activity. Remove stale label or comment or this will be closed in 5 days.'
+      exempt_labels: ''  # Add comma-separated labels to exempt, e.g., 'pinned,security'
+

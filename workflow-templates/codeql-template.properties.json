@@ -1,0 +1,13 @@
+{
+  "name": "CodeQL Security Analysis",
+  "description": "Run CodeQL security analysis on your repository",
+  "iconName": "example-icon",
+  "categories": [
+    "Security",
+    "Code Scanning"
+  ],
+  "filePatterns": [
+    "^.*\\.(py|js|ts|go|java|cpp|cs|rb)$"
+  ]
+}
+

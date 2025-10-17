@@ -1,0 +1,13 @@
+{
+  "name": "Close Stale Issues",
+  "description": "Automatically close stale issues after a period of inactivity",
+  "iconName": "example-icon",
+  "categories": [
+    "Automation",
+    "Project Management"
+  ],
+  "filePatterns": [
+    "^.*$"
+  ]
+}
+
