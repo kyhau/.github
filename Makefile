@@ -16,8 +16,7 @@ install: ## Install yamllint
 # Linting
 lint: install ## Lint YAML files
 	@echo "Linting YAML files..."
-	@yamllint -c .github/linters/.yaml-lint.yml .github/workflows/
-	@yamllint -c .github/linters/.yaml-lint.yml workflow-templates/
+	@yamllint -c .github/linters/.yaml-lint.yml .github/workflows/ workflow-templates/
 	@echo "✓ Linting complete"
 
 # Cleanup
