@@ -16,4 +16,3 @@ jobs:
       branches: '["main"]'
       schedule_enabled: true
       schedule_cron: '0 19 * * 5'
-

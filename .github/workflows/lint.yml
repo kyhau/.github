@@ -1,0 +1,42 @@
+name: Lint
+
+on:
+  push:
+    branches: [main, master]
+    paths:
+      - .github/**
+      - workflow-templates/**
+      - "**.yml"
+      - "**.yaml"
+  pull_request:
+    branches: [main, master]
+    paths:
+      - .github/**
+      - workflow-templates/**
+      - "**.yml"
+      - "**.yaml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  lint:
+    name: Lint YAML files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Run lint
+        run: make lint
