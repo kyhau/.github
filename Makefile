@@ -10,7 +10,7 @@ help: ## Show this help message
 # Installation
 install: ## Install yamllint
 	@echo "Installing yamllint..."
-	@pip install --user yamllint
+	@pip install yamllint
 	@echo "✓ yamllint installed"
 
 # Linting
