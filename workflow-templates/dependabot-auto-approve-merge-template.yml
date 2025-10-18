@@ -13,4 +13,3 @@ jobs:
     with:
       auto_merge_enabled: true
       merge_method: squash  # Options: squash, merge, rebase
-
